@@ -1,0 +1,11 @@
+devices:
+  - name: Router
+    ip: 192.168.1.1
+  - name: NAS
+    ip: 192.168.1.2
+  - name: Printer
+    ip: 192.168.1.3
+
+settings:
+  report_interval_minutes: 60  # Set to 0 to disable periodic report
+

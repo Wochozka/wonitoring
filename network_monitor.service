@@ -1,0 +1,17 @@
+[Unit]
+Description=Simple Network Monitor with Pushover
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/network-monitor
+ExecStart=/usr/bin/python3 /opt/network-monitor/network_monitor.py --config devices.yaml
+Restart=on-failure
+RestartSec=10
+StandardOutput=append:/opt/network-monitor/logs/monitor.log
+StandardError=append:/opt/network-monitor/logs/monitor.log
+
+[Install]
+WantedBy=multi-user.target
+
